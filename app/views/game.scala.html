@@ -1,0 +1,17 @@
+@(game: Game)
+
+@import helper._
+
+@title = @{"Game "+game.id}
+
+@widthblock = @{ 7 }
+@heightblock = @{ 6 }
+@r = @{ 30 }
+@circlescale = @{ 0.8 }
+@widthpix = @{ widthblock * 2 * r }
+@heightpix = @{ heightblock * 2 * r  }
+
+@main(title, "connect4.js") {
+    
+    <h1>@game.id</h1>
+}

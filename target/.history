@@ -1,0 +1,12 @@
+run
+last compile:run
+clean
+compile
+run
+pl
+run
+run 
+run
+clean
+compile
+run
