@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@ee7545d[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4eb09321[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -755,6 +755,33 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving postgresql#postgresql;9.1-901-1.jdbc4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: postgresql#postgresql;9.1-901-1.jdbc4 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried /Users/deedy/Dev/play-2.2.0/repository/local/postgresql/postgresql/9.1-901-1.jdbc4/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for postgresql#postgresql;9.1-901-1.jdbc4[0m
+[0m[[0mdebug[0m] [0m		tried file:/Users/deedy/.m2/repository/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for postgresql#postgresql;9.1-901-1.jdbc4[0m
+[0m[[0mdebug[0m] [0m		tried http://oss.sonatype.org/content/repositories/snapshots/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://oss.sonatype.org/content/repositories/snapshots/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0m	sonatype-oss-snapshots: no ivy file found for postgresql#postgresql;9.1-901-1.jdbc4[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for postgresql#postgresql;9.1-901-1.jdbc4[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom (9.1-901-1.jdbc4)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] postgresql#postgresql;9.1-901-1.jdbc4!postgresql.pom(pom.original) (58ms)[0m
+[0m[[0mdebug[0m] [0m		tried /Users/deedy/Dev/play-2.2.0/repository/local/postgresql/postgresql/9.1-901-1.jdbc4/jars/postgresql.jar[0m
+[0m[[0mdebug[0m] [0m		tried file:/Users/deedy/.m2/repository/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://oss.sonatype.org/content/repositories/snapshots/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://oss.sonatype.org/content/repositories/snapshots/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0mdebug[0m] [0m	found postgresql#postgresql;9.1-901-1.jdbc4 in public[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
@@ -1179,6 +1206,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
@@ -1604,6 +1635,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.0 [test->default(compile)][0m
@@ -2952,6 +2987,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT [optional][0m
@@ -3379,6 +3418,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT [optional][0m
@@ -3806,6 +3849,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->postgresql#postgresql;9.1-901-1.jdbc4 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.0 [test->default(compile)][0m
@@ -4979,6 +5026,12 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.0!play-java-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.10;2.2.0!play-java-ebean_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.0!play-cache_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] postgresql#postgresql;9.1-901-1.jdbc4!postgresql.jar (984ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.0!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.0!play-java_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.0!play-jdbc_2.10.jar[0m
@@ -5100,7 +5153,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1695ms :: artifacts dl 87ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6172ms :: artifacts dl 1107ms[0m
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT compile produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT runtime produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT test produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-test.xml[0m
@@ -5114,5 +5167,5 @@
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT docs produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT pom produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for connect-four-ai#connect-four-ai_2.10;1.0-SNAPSHOT scala-tool produced in /Users/deedy/Dev/Play/Connect4AI/target/resolution-cache/reports/connect-four-ai-connect-four-ai_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1695ms resolve - 87ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (6172ms resolve - 1107ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
