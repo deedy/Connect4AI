@@ -5,6 +5,9 @@
 
 create table game (
   id                        bigint not null,
+  turn                      integer,
+  board                     clob,
+  constraint ck_game_turn check (turn in (0,1)),
   constraint pk_game primary key (id))
 ;
 

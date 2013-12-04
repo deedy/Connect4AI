@@ -33,9 +33,9 @@ Seq[Any](format.raw/*1.62*/("""
 
 
 """),_display_(Seq[Any](/*7.2*/main("Todo list")/*7.19*/ {_display_(Seq[Any](format.raw/*7.21*/("""
-    
+
     <h1>"""),_display_(Seq[Any](/*9.10*/tasks/*9.15*/.size())),format.raw/*9.22*/(""" task(s)</h1>
-    
+
     <ul>
         """),_display_(Seq[Any](/*12.10*/for(task <- tasks) yield /*12.28*/ {_display_(Seq[Any](format.raw/*12.30*/("""
             <li>
@@ -46,21 +46,21 @@ Seq[Any](format.raw/*1.62*/("""
             </li>
         """)))})),format.raw/*19.10*/("""
     </ul>
-    
+
     <h2>Add a new task</h2>
-    
+
     """),_display_(Seq[Any](/*24.6*/form(routes.Application.newTask())/*24.40*/ {_display_(Seq[Any](format.raw/*24.42*/("""
-        """),_display_(Seq[Any](/*25.10*/inputText(taskForm("label")))),format.raw/*25.38*/(""" 
+        """),_display_(Seq[Any](/*25.10*/inputText(taskForm("label")))),format.raw/*25.38*/("""
         <input type="submit" value="Create">
     """)))})),format.raw/*27.6*/("""
-    
+
 
     <h1>"""),_display_(Seq[Any](/*30.10*/games/*30.15*/.size())),format.raw/*30.22*/(""" game(s)</h1>
-    
+
     <ul>
         """),_display_(Seq[Any](/*33.10*/for(game <- games) yield /*33.28*/ {_display_(Seq[Any](format.raw/*33.30*/("""
             <li>
-                <a href='"""),_display_(Seq[Any](/*35.27*/routes/*35.33*/.Application.getGame(game.id))),format.raw/*35.62*/("""'>"""),_display_(Seq[Any](/*35.65*/game/*35.69*/.id)),format.raw/*35.72*/("""</a>
+                <a href='"""),_display_(Seq[Any](/*35.27*/routes/*35.33*/.Application.getGame(game.id))),format.raw/*35.62*/("""'>"""),_display_(Seq[Any](/*35.65*/game/*35.69*/.id)),format.raw/*35.72*/("""</a><br>
             </li>
         """)))})),format.raw/*37.10*/("""
     </ul>
@@ -68,10 +68,8 @@ Seq[Any](format.raw/*1.62*/("""
     """),_display_(Seq[Any](/*40.6*/form(routes.Application.newGame())/*40.40*/ {_display_(Seq[Any](format.raw/*40.42*/("""
         <input type="submit" value="New Game">
     """)))})),format.raw/*42.6*/("""
-
-
-    
-""")))})),format.raw/*46.2*/("""   """))}
+""")))})),format.raw/*43.2*/("""
+"""))}
     }
     
     def render(tasks:List[Task],games:List[Game],taskForm:Form[Task]): play.api.templates.HtmlFormat.Appendable = apply(tasks,games,taskForm)
@@ -83,11 +81,11 @@ Seq[Any](format.raw/*1.62*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Oct 26 21:35:26 EDT 2013
-                    SOURCE: /Users/deedy/Dev/Play/ConnectFourAI/app/views/index.scala.html
-                    HASH: a4f1bed75047a0f65caf752bd5c11dd3c2161b6d
-                    MATRIX: 800->1|970->61|998->80|1036->84|1061->101|1100->103|1150->118|1163->123|1191->130|1264->167|1298->185|1338->187|1409->222|1422->226|1450->232|1504->250|1557->294|1597->296|1704->371|1764->399|1853->453|1896->487|1936->489|1982->499|2032->527|2115->579|2167->595|2181->600|2210->607|2283->644|2317->662|2357->664|2437->708|2452->714|2503->743|2542->746|2555->750|2580->753|2644->785|2696->802|2739->836|2779->838|2863->891|2903->900
-                    LINES: 26->1|30->1|32->4|35->7|35->7|35->7|37->9|37->9|37->9|40->12|40->12|40->12|42->14|42->14|42->14|43->15|43->15|43->15|45->17|47->19|52->24|52->24|52->24|53->25|53->25|55->27|58->30|58->30|58->30|61->33|61->33|61->33|63->35|63->35|63->35|63->35|63->35|63->35|65->37|68->40|68->40|68->40|70->42|74->46
+                    DATE: Tue Dec 03 17:20:50 EST 2013
+                    SOURCE: /Users/deedy/Dev/Play/Connect4AI/app/views/index.scala.html
+                    HASH: d3275471ea5cd014017b2467c500f18bb921b986
+                    MATRIX: 800->1|970->61|998->80|1036->84|1061->101|1100->103|1146->114|1159->119|1187->126|1256->159|1290->177|1330->179|1401->214|1414->218|1442->224|1496->242|1549->286|1589->288|1696->363|1756->391|1837->437|1880->471|1920->473|1966->483|2016->511|2098->562|2146->574|2160->579|2189->586|2258->619|2292->637|2332->639|2412->683|2427->689|2478->718|2517->721|2530->725|2555->728|2623->764|2675->781|2718->815|2758->817|2842->870|2875->872
+                    LINES: 26->1|30->1|32->4|35->7|35->7|35->7|37->9|37->9|37->9|40->12|40->12|40->12|42->14|42->14|42->14|43->15|43->15|43->15|45->17|47->19|52->24|52->24|52->24|53->25|53->25|55->27|58->30|58->30|58->30|61->33|61->33|61->33|63->35|63->35|63->35|63->35|63->35|63->35|65->37|68->40|68->40|68->40|70->42|71->43
                     -- GENERATED --
                 */
             

@@ -37,12 +37,14 @@ Seq[Any](format.raw/*1.54*/("""
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.59*/routes/*9.65*/.Assets.at("images/favicon.png"))),format.raw/*9.97*/("""">
         <script src=""""),_display_(Seq[Any](/*10.23*/routes/*10.29*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*10.74*/("""" type="text/javascript"></script>
         <script src=""""),_display_(Seq[Any](/*11.23*/routes/*11.29*/.Assets.at("javascripts/snap.svg-min.js"))),format.raw/*11.70*/("""" type="text/javascript"></script>
-        """),_display_(Seq[Any](/*12.10*/for( script <- scriptnames) yield /*12.37*/ {_display_(Seq[Any](format.raw/*12.39*/("""
-          <script src=""""),_display_(Seq[Any](/*13.25*/routes/*13.31*/.Assets.at("javascripts/"+script))),format.raw/*13.64*/("""" type ="text/javascript"></script>
-        """)))})),format.raw/*14.10*/("""
+        <script type="text/javascript" src=""""),_display_(Seq[Any](/*12.46*/routes/*12.52*/.Application.javascriptRoutes)),format.raw/*12.81*/(""""></script>
+        """),_display_(Seq[Any](/*13.10*/for( script <- scriptnames) yield /*13.37*/ {_display_(Seq[Any](format.raw/*13.39*/("""
+          <script src=""""),_display_(Seq[Any](/*14.25*/routes/*14.31*/.Assets.at("javascripts/"+script))),format.raw/*14.64*/("""" type ="text/javascript"></script>
+        """)))})),format.raw/*15.10*/("""
     </head>
     <body>
-        """),_display_(Seq[Any](/*17.10*/content)),format.raw/*17.17*/("""
+        <button class="hello" type="button">Gabru</button>
+        """),_display_(Seq[Any](/*19.10*/content)),format.raw/*19.17*/("""
     </body>
 </html>
 """))}
@@ -57,11 +59,11 @@ Seq[Any](format.raw/*1.54*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Oct 26 21:35:26 EDT 2013
-                    SOURCE: /Users/deedy/Dev/Play/ConnectFourAI/app/views/main.scala.html
-                    HASH: f48ae561e777e38a5fc8cd0633132e5b8d046215
-                    MATRIX: 792->1|938->53|1026->106|1052->111|1149->173|1163->179|1218->213|1314->274|1328->280|1381->312|1442->337|1457->343|1524->388|1617->445|1632->451|1695->492|1775->536|1818->563|1858->565|1919->590|1934->596|1989->629|2066->674|2135->707|2164->714
-                    LINES: 26->1|29->1|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|45->17|45->17
+                    DATE: Tue Nov 12 20:30:00 EST 2013
+                    SOURCE: /Users/deedy/Dev/Play/Connect4AI/app/views/main.scala.html
+                    HASH: 2e3202393abc25f0d5d5408a268ef889f18491a5
+                    MATRIX: 792->1|938->53|1026->106|1052->111|1149->173|1163->179|1218->213|1314->274|1328->280|1381->312|1442->337|1457->343|1524->388|1617->445|1632->451|1695->492|1811->572|1826->578|1877->607|1934->628|1977->655|2017->657|2078->682|2093->688|2148->721|2225->766|2353->858|2382->865
+                    LINES: 26->1|29->1|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|47->19|47->19
                     -- GENERATED --
                 */
             

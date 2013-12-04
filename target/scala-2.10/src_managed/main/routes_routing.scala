@@ -1,6 +1,6 @@
-// @SOURCE:/Users/deedy/Dev/Play/ConnectFourAI/conf/routes
-// @HASH:8ab4a1a4276ceffdd463ca4b48c31aeaf8bd88ef
-// @DATE:Sat Oct 26 21:35:25 EDT 2013
+// @SOURCE:/Users/deedy/Dev/Play/Connect4AI/conf/routes
+// @HASH:dc1c9dfd89493fc82657ce348818e18c52078bf7
+// @DATE:Tue Dec 03 17:47:50 EST 2013
 
 
 import play.core._
@@ -49,13 +49,25 @@ private[this] lazy val controllers_Application_newGame4 = Route("POST", PathPatt
         
 
 // @LINE:11
-private[this] lazy val controllers_Application_getGame5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("games/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_playMoveInGame5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("games/"),DynamicPart("id", """[^/]+""",true),StaticPart("/play"))))
         
 
-// @LINE:14
-private[this] lazy val controllers_Assets_at6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:12
+private[this] lazy val controllers_Application_getGameBoard6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("games/"),DynamicPart("id", """[^/]+""",true),StaticPart("/get"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks""","""controllers.Application.tasks()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks""","""controllers.Application.newTask()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks/$id<[^/]+>/delete""","""controllers.Application.deleteTask(id:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks/newgame""","""controllers.Application.newGame()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """games/$id<[^/]+>""","""controllers.Application.getGame(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:13
+private[this] lazy val controllers_Application_getGame7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("games/"),DynamicPart("id", """[^/]+""",true))))
+        
+
+// @LINE:17
+private[this] lazy val controllers_Application_javascriptRoutes8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/javascripts/routes"))))
+        
+
+// @LINE:20
+private[this] lazy val controllers_Assets_at9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks""","""controllers.Application.tasks()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks""","""controllers.Application.newTask()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks/$id<[^/]+>/delete""","""controllers.Application.deleteTask(id:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """tasks/newgame""","""controllers.Application.newGame()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """games/$id<[^/]+>/play""","""controllers.Application.playMoveInGame(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """games/$id<[^/]+>/get""","""controllers.Application.getGameBoard(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """games/$id<[^/]+>""","""controllers.Application.getGame(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascripts/routes""","""controllers.Application.javascriptRoutes()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -104,15 +116,39 @@ case controllers_Application_newGame4(params) => {
         
 
 // @LINE:11
-case controllers_Application_getGame5(params) => {
+case controllers_Application_playMoveInGame5(params) => {
+   call(params.fromPath[Long]("id", None)) { (id) =>
+        invokeHandler(controllers.Application.playMoveInGame(id), HandlerDef(this, "controllers.Application", "playMoveInGame", Seq(classOf[Long]),"GET", """""", Routes.prefix + """games/$id<[^/]+>/play"""))
+   }
+}
+        
+
+// @LINE:12
+case controllers_Application_getGameBoard6(params) => {
+   call(params.fromPath[Long]("id", None)) { (id) =>
+        invokeHandler(controllers.Application.getGameBoard(id), HandlerDef(this, "controllers.Application", "getGameBoard", Seq(classOf[Long]),"GET", """""", Routes.prefix + """games/$id<[^/]+>/get"""))
+   }
+}
+        
+
+// @LINE:13
+case controllers_Application_getGame7(params) => {
    call(params.fromPath[Long]("id", None)) { (id) =>
         invokeHandler(controllers.Application.getGame(id), HandlerDef(this, "controllers.Application", "getGame", Seq(classOf[Long]),"GET", """""", Routes.prefix + """games/$id<[^/]+>"""))
    }
 }
         
 
-// @LINE:14
-case controllers_Assets_at6(params) => {
+// @LINE:17
+case controllers_Application_javascriptRoutes8(params) => {
+   call { 
+        invokeHandler(controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Nil,"GET", """ Javascript routing""", Routes.prefix + """assets/javascripts/routes"""))
+   }
+}
+        
+
+// @LINE:20
+case controllers_Assets_at9(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

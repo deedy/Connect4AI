@@ -1,11 +1,11 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/deedy/Dev/Play/ConnectFourAI/project/}connectfourai-build...[0m
-[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#connectfourai-build;0.1-SNAPSHOT[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/deedy/Dev/Play/Connect4AI/project/}connect4ai-build...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#connect4ai-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#sbt-plugin;2.2.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#sbt-plugin;2.2.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#sbt-plugin;2.2.0[0m
@@ -413,9 +413,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2_2.10;2.1.1->org.scalaz#scalaz-concurrent_2.10;7.0.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->com.typesafe.play#sbt-link;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->runtime][0m
@@ -643,10 +643,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->com.typesafe.play#sbt-link;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->runtime][0m
@@ -874,12 +874,12 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-sbt#sbt;0.13.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.0 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.0[0m
@@ -1402,11 +1402,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->com.typesafe.play#sbt-link;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->runtime][0m
@@ -1633,13 +1633,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-sbt#main;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#main;0.13.0->org.scala-sbt#actions;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#actions;0.13.0->org.scala-sbt#classpath;0.13.0 [compile->default(compile)][0m
@@ -1951,10 +1951,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [runtime-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->com.typesafe.play#sbt-link;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->runtime][0m
@@ -2181,13 +2181,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [test-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->com.typesafe.play#sbt-plugin;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->com.typesafe.play#sbt-link;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-link;2.2.0->org.javassist#javassist;3.18.0-GA [compile->runtime][0m
@@ -2414,13 +2414,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.0 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-sbt#main;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#main;0.13.0->org.scala-sbt#actions;0.13.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#actions;0.13.0->org.scala-sbt#classpath;0.13.0 [compile->default(compile)][0m
@@ -2732,18 +2732,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [plugin][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [sources][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [docs][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [docs][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [pom][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#connectfourai-build;0.1-SNAPSHOT [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#connect4ai-build;0.1-SNAPSHOT [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->default][0m
@@ -2761,8 +2761,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.2 {optional=[compile(*), master(*)]}[0m
@@ -2777,12 +2777,12 @@
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#connectfourai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/default/connectfourai-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#connect4ai-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/default/connect4ai-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#sbt-plugin;2.2.0!sbt-plugin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#sbt-link;2.2.0!sbt-link.jar[0m
@@ -2860,19 +2860,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.0!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3270ms :: artifacts dl 122ms[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT compile produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT runtime produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT test produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT provided produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT optional produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT compile-internal produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT runtime-internal produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT test-internal produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT plugin produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT sources produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT docs produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT pom produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#connectfourai-build;0.1-SNAPSHOT scala-tool produced in /Users/deedy/Dev/Play/ConnectFourAI/project/target/resolution-cache/reports/default-connectfourai-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3270ms resolve - 122ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3371ms :: artifacts dl 107ms[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT compile produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT runtime produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT test produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT provided produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT optional produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT compile-internal produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT runtime-internal produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT test-internal produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT plugin produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT sources produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT docs produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT pom produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#connect4ai-build;0.1-SNAPSHOT scala-tool produced in /Users/deedy/Dev/Play/Connect4AI/project/target/resolution-cache/reports/default-connect4ai-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (3371ms resolve - 107ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
