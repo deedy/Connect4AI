@@ -7,15 +7,15 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20131204183550"/>
+		date="20131204185545"/>
 	<dependencies>
 		<module organisation="postgresql" name="postgresql">
-			<revision name="9.1-901-1.jdbc4" status="release" pubdate="20111218185532" resolver="public" artresolver="public" homepage="http://jdbc.postgresql.org" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="65">
+			<revision name="9.1-901-1.jdbc4" status="release" pubdate="20111218185532" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jdbc.postgresql.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="65">
 				<license name="BSD License" url="http://jdbc.postgresql.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1064" time="58" location="/Users/deedy/Dev/play-2.2.0/framework/../repository/cache/postgresql/postgresql/ivy-9.1-901-1.jdbc4.xml" searched="true" original-local-location="/Users/deedy/Dev/play-2.2.0/framework/../repository/cache/postgresql/postgresql/ivy-9.1-901-1.jdbc4.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom"/>
+				<metadata-artifact status="no" details="" size="2351" time="0" location="/Users/deedy/Dev/play-2.2.0/framework/../repository/cache/postgresql/postgresql/ivy-9.1-901-1.jdbc4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.pom"/>
 				<caller organisation="connect-four-ai" name="connect-four-ai_2.10" conf="optional, compile, runtime, runtime-internal" rev="9.1-901-1.jdbc4" rev-constraint-default="9.1-901-1.jdbc4" rev-constraint-dynamic="9.1-901-1.jdbc4" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="postgresql" type="jar" ext="jar" status="successful" details="" size="551290" time="984" location="/Users/deedy/Dev/play-2.2.0/framework/../repository/cache/postgresql/postgresql/jars/postgresql-9.1-901-1.jdbc4.jar">
+					<artifact name="postgresql" type="jar" ext="jar" status="no" details="" size="551290" time="0" location="/Users/deedy/Dev/play-2.2.0/framework/../repository/cache/postgresql/postgresql/jars/postgresql-9.1-901-1.jdbc4.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar"/>
 					</artifact>
 				</artifacts>

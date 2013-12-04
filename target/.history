@@ -85,3 +85,12 @@ sbt clean stage
 sbt
 eun
 run
+start
+clean stage
+clean
+stage
+start
+run
+clean
+stage
+start
