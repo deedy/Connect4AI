@@ -81,3 +81,7 @@ help
 help h2-browser
 h2-browser clean
 clean h2-browser
+sbt clean stage
+sbt
+eun
+run
