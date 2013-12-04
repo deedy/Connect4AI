@@ -185,11 +185,14 @@ public class Game extends Model {
     if (toCheck == null) {
       return null;
     }
+    System.out.println("Checking Completeness");
     for (int i = -1; i <= 1 ; i++) {
       for (int j = -1; j <= 1; j++) {
         if (!(i == 0 && j == 0)) {
-          if (checkComplete(board, x, y, i, j, toCheck)) {
-            return createWinningLine(board, x, y, i, j);
+          int dirOne = checkComplete(board, x, y, -i, -j, toCheck);
+          int dirTwo = checkComplete(board, x, y, i, j, toCheck);
+          if (dirOne + dirTwo - 1 >= 4) {
+            return createWinningLine(board, x, y, i, j, dirOne, dirTwo);
           }
         }
       }
@@ -198,10 +201,11 @@ public class Game extends Model {
   }
 
   private List<Map<String, Object>> createWinningLine(
-      ArrayList<ArrayList<Coins>> board, int x, int y, int i, int j) {
+      ArrayList<ArrayList<Coins>> board, int x, int y, int i, int j,
+      int dirOne, int dirTwo) {
     List<Map<String, Object>> listOfMoves =
       new ArrayList<Map<String, Object>>();
-    for (int iter = 0; iter < 4; iter++) {
+    for (int iter = -dirOne+1; iter <= dirTwo-1; iter++) {
       Map<String, Object> move = new HashMap<String, Object>();
       move.put("row",  x + iter * i);
       move.put("column", y + iter * j);
@@ -217,26 +221,20 @@ public class Game extends Model {
     return board.get(i).get(j);
   }
 
-  private boolean checkComplete(ArrayList<ArrayList<Coins>> board,
+  private int checkComplete(ArrayList<ArrayList<Coins>> board,
       int starti, int startj,
       int directioni, int directionj,
       Coins toCheck) {
     int count = 0;
-    while (count < 4) {
-      if (starti >=0 && starti < board.size() &&
-          startj >=0 && startj < board.get(0).size()) {
-          if (board.get(starti).get(startj) == toCheck) {
-            starti += directioni;
-            startj += directionj;
-            count += 1;
-          } else {
-            return false;
-          }
-      } else {
-        return false;
-      }
+    while (count < 4 &&
+           starti >=0 && starti < board.size() &&
+           startj >=0 && startj < board.get(0).size() &&
+           board.get(starti).get(startj) == toCheck) {
+      starti += directioni;
+      startj += directionj;
+      count += 1;
     }
-    return true;
+    return count;
   }
 
   public static Finder<Long,Game> find = new Finder(
