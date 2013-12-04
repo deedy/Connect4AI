@@ -1,12 +1,12 @@
-2013-12-04 18:05:43,001 - [INFO] - from play in pool-59-thread-3 
+2013-12-04 18:14:33,227 - [INFO] - from play in pool-70-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0%0:9000
 
-2013-12-04 18:05:52,924 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-04 18:14:42,095 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2013-12-04 18:05:52,976 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-04 18:14:42,145 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2013-12-04 18:05:53,831 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-04 18:14:43,019 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
