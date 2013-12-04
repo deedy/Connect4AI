@@ -46,34 +46,76 @@ function Connect4(id, s, wb, hb, bw) {
    * Call to initialize the board
    */
   this.drawBoard();
+  /**
+   * Private function to make the class selector for a filled coin
+   */
+  this.makeSelector = function(x, y) {
+      return "coin-"+x+"-"+y;
+  }
+}
+Connect4.prototype.getCoinAt = function(row, column) {
+  var selector = "."+this.makeSelector(row, column);
+  return this.board.select(selector);
 }
 
-Connect4.prototype.playMove = function(column, row, turn) {
-  if (row == -1) {
-    // TODO: no possible play in this column
-    return;
-  }
-  var xoffset = ((column + 1) - 0.5) * this.blockWidth + (this.circlescale/2);
-  var yinit = 0;
-  var yfinal = (this.heightBlock - row - 0.5) * this.blockWidth + (this.circlescale/2);
-
-  var c = this.s.circle(xoffset, 0, this.radius);
-  var fillcolor = turn % 2 == 0? this.colorA : this.colorB;
-  c.attr({
-    fill: fillcolor
-  });
-  c.click((function(a, context) {
-    return function() {
-      context.clickCallback(a);
+Connect4.prototype.playMove = function(datastruct) {
+  console.log(datastruct);
+  if (datastruct.hasOwnProperty("message") &&
+      datastruct.hasOwnProperty("messageCode") ) {
+    $("#message").text(datastruct["message"]);
+    $("#message").show();
+    if (datastruct["messageCode"] != "ColumnIsFull") {
+      $("#new-game").show();
     }
-  })(column, this));
-  this.board.add(c);
-  c.animate({cy : yfinal}, 1000, mina.bounce);
+  } else {
+    $("#message").hide();
+    $("#new-game").hide();
+  }
+  if (datastruct.hasOwnProperty("row") &&
+      datastruct.hasOwnProperty("column") &&
+      datastruct.hasOwnProperty("turn")) {
+    var row = datastruct["row"];
+    var column = datastruct["column"];
+    var turn = datastruct["turn"];
+    if (row == -1) {
+      // TODO: no possible play in this column
+      return;
+    }
+    var xoffset = ((column + 1) - 0.5) * this.blockWidth + (this.circlescale/2);
+    var yinit = 0;
+    var yfinal = (this.heightBlock - row - 0.5) * this.blockWidth + (this.circlescale/2);
+
+    var c = this.s.circle(xoffset, 0, this.radius);
+    var fillcolor = turn % 2 == 0? this.colorA : this.colorB;
+    c.attr({
+      fill: fillcolor,
+      class: this.makeSelector(row, column)
+    });
+    c.click((function(a, context) {
+      return function() {
+        context.clickCallback(a);
+      }
+    })(column, this));
+    this.board.add(c);
+    c.animate({cy : yfinal}, 1000, mina.bounce);
+  }
+  if (datastruct.hasOwnProperty("winstreak")) {
+    this.drawWin(datastruct['winstreak']);
+  }
+}
+
+Connect4.prototype.drawWin = function(points) {
+  for (var i = 0; i < points.length; i++) {
+    var circle = this.getCoinAt(points[i]['row'], points[i]['column']);
+    if (circle != null) {
+      circle.attr("stroke", "#000");
+      circle.attr("stroke-width", "4");
+    }
+  }
 }
 
 Connect4.prototype.clickCallback = function(column) {
   var r = jsRoutes.controllers.Application.playMoveInGame(this.id);
-  console.log(this);
   $.ajax({
     url: r.url,
     context: this,
@@ -82,11 +124,10 @@ Connect4.prototype.clickCallback = function(column) {
       "column" : column
     },
     dataType: "json",
-    success: function(e) {
+    success: function(move) {
       console.log("success");
-      console.log(e);
-      console.log(this);
-      this.playMove(e.column, e.row, e.turn);
+      console.log(move);
+      this.playMove(move);
     },
     error: function() {
       console.log("error");
@@ -134,8 +175,7 @@ Connect4.prototype.retrieveBoard = function() {
     success: function(moves) {
       console.log("success in retrieval");
       for (var i = 0; i < moves.length; i++) {
-        console.log(moves[i]);
-        this.playMove(moves[i].column, moves[i].row, moves[i].turn);
+        this.playMove(moves[i]);
       }
     },
     error: function() {
@@ -148,22 +188,4 @@ $(document).ready(function() {
   var gameId = $('#gameId').data('id');
   var s = Snap($(document).width(), $(document).height());
   var instance = new Connect4(gameId, s, 7, 6, 60);
-  console.log(instance);
-  // var r = jsRoutes.controllers.Application.simpleAdder();
-  // $.ajax({
-  //   url: r.url,
-  //   type: r.type,
-  //   data: {
-  //     9 : {"value1":"kaum", "bitches":"shera"},
-  //     8 : "value2"
-  //   },
-  //   success: function(e) {
-  //     console.log("success");
-  //     console.log(e);
-  //   },
-  //   error: function() {
-  //     console.log("error");
-  //   }
-  // });
-  // console.log(r.url);
 });

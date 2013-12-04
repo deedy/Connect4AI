@@ -57,13 +57,16 @@ public class Application extends Controller {
 
     public static Result newGame() {
       Form<Game> filledForm = gameForm.bindFromRequest();
-      if(filledForm.hasErrors()) {
-        return TODO;
-      } else {
-        Game game = new Game();
-        game.save();
-        return redirect(routes.Application.getGame(game.id));
-      }
+      Game game = new Game();
+      game.save();
+      return redirect(routes.Application.getGame(game.id));
+      // if(filledForm.hasErrors()) {
+      //   return TODO;
+      // } else {
+      //   Game game = new Game();
+      //   game.save();
+      //   return redirect(routes.Application.getGame(game.id));
+      // }
     }
 
     public static Result playMoveInGame(Long id) {
