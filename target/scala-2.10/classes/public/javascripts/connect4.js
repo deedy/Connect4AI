@@ -64,9 +64,8 @@ Connect4.prototype.playMove = function(datastruct) {
       datastruct.hasOwnProperty("messageCode") ) {
     $("#message").text(datastruct["message"]);
     $("#message").show();
-    if (datastruct["messageCode"] != "ColumnIsFull") {
-      $("#new-game").show();
-    }
+    $("#new-game").show();
+
   } else {
     $("#message").hide();
     $("#new-game").hide();
