@@ -1,6 +1,6 @@
 // @SOURCE:/Users/deedy/Dev/Play/Connect4AI/conf/routes
 // @HASH:dc1c9dfd89493fc82657ce348818e18c52078bf7
-// @DATE:Wed Dec 04 18:55:45 EST 2013
+// @DATE:Wed Dec 04 19:47:49 EST 2013
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
