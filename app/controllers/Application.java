@@ -13,12 +13,14 @@ import java.util.HashMap;
 import java.util.Arrays;
 import java.util.ArrayList;
 import com.google.gson.Gson;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 public class Application extends Controller {
 
 
     static Form<Task> taskForm = Form.form(Task.class);
     static Form<Game> gameForm = Form.form(Game.class);
-
+    static Map<Long, Lock> gamemap = new HashMap<Long, Lock>();
     public static Result index() {
       return redirect(routes.Application.tasks());
     }
@@ -59,6 +61,7 @@ public class Application extends Controller {
       Form<Game> filledForm = gameForm.bindFromRequest();
       Game game = new Game();
       game.save();
+      gamemap.put(game.id, new ReentrantLock());
       return redirect(routes.Application.getGame(game.id));
       // if(filledForm.hasErrors()) {
       //   return TODO;
@@ -69,18 +72,35 @@ public class Application extends Controller {
       // }
     }
 
-    public static Result playMoveInGame(Long id) {
+    private static Result playMoveInGameWithOrWithoutAI(Long id, boolean ai) {
       response().setContentType("application/json");
       Game game = Game.getGame(id);
       if (game == null) {
         return TODO;
       }
-      Integer column = Integer.parseInt(request().getQueryString("column"));
-      Map<String, Object> resultJson = game.playMove(column);
-      game.save();
-      Gson gson = new Gson();
-      System.out.println(gson.toJson(resultJson));
-      return ok(gson.toJson(resultJson));
+      if (gamemap.get(id).tryLock()) {
+        Map<String, Object> resultJson = null;
+        if (!ai) {
+          Integer column = Integer.parseInt(request().getQueryString("column"));
+          resultJson = game.playMove(column);
+        } else {
+          resultJson = game.playMoveAI();
+        }
+        game.save();
+        gamemap.get(id).unlock();
+        Gson gson = new Gson();
+        System.out.println(gson.toJson(resultJson));
+        return ok(gson.toJson(resultJson));
+      }
+      return TODO;
+    }
+
+    public static Result playMoveInGame(Long id) {
+      return playMoveInGameWithOrWithoutAI(id, false);
+    }
+
+    public static Result playMoveInGameAI(Long id) {
+      return playMoveInGameWithOrWithoutAI(id, true);
     }
 
     public static Result getGameBoard(Long id) {
@@ -111,8 +131,8 @@ public class Application extends Controller {
 
                 // Routes for Projects
                 controllers.routes.javascript.Application.playMoveInGame(),
-                controllers.routes.javascript.Application.getGameBoard()
-
+                controllers.routes.javascript.Application.getGameBoard(),
+                controllers.routes.javascript.Application.playMoveInGameAI()
             )
         );
     }

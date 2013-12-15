@@ -1,6 +1,6 @@
 // @SOURCE:/Users/deedy/Dev/Play/Connect4AI/conf/routes
-// @HASH:dc1c9dfd89493fc82657ce348818e18c52078bf7
-// @DATE:Wed Dec 04 19:47:49 EST 2013
+// @HASH:5f9182911b9297fac94eba0c6140382f2e54537f
+// @DATE:Sun Dec 15 10:50:14 EST 2013
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,8 +13,9 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:20
-// @LINE:17
+// @LINE:21
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -25,11 +26,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:20
+// @LINE:21
 class ReverseAssets {
     
 
-// @LINE:20
+// @LINE:21
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -38,7 +39,8 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:17
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -56,13 +58,13 @@ def playMoveInGame(id:Long): Call = {
 }
                                                 
 
-// @LINE:13
+// @LINE:14
 def getGame(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:12
+// @LINE:13
 def getGameBoard(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id) + "/get")
 }
@@ -86,6 +88,12 @@ def newGame(): Call = {
 }
                                                 
 
+// @LINE:12
+def playMoveInGameAI(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id) + "/playAI")
+}
+                                                
+
 // @LINE:8
 def newTask(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "tasks")
@@ -98,7 +106,7 @@ def index(): Call = {
 }
                                                 
 
-// @LINE:17
+// @LINE:18
 def javascriptRoutes(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/javascripts/routes")
 }
@@ -110,8 +118,9 @@ def javascriptRoutes(): Call = {
                   
 
 
-// @LINE:20
-// @LINE:17
+// @LINE:21
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -122,11 +131,11 @@ def javascriptRoutes(): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:20
+// @LINE:21
 class ReverseAssets {
     
 
-// @LINE:20
+// @LINE:21
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -140,7 +149,8 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:17
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -163,7 +173,7 @@ def playMoveInGame : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:13
+// @LINE:14
 def getGame : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.getGame",
    """
@@ -174,7 +184,7 @@ def getGame : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:12
+// @LINE:13
 def getGameBoard : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.getGameBoard",
    """
@@ -218,6 +228,17 @@ def newGame : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:12
+def playMoveInGameAI : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.playMoveInGameAI",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "games/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/playAI"})
+      }
+   """
+)
+                        
+
 // @LINE:8
 def newTask : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.newTask",
@@ -240,7 +261,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:17
+// @LINE:18
 def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.javascriptRoutes",
    """
@@ -257,8 +278,9 @@ def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:20
-// @LINE:17
+// @LINE:21
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -270,11 +292,11 @@ def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:20
+// @LINE:21
 class ReverseAssets {
     
 
-// @LINE:20
+// @LINE:21
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -283,7 +305,8 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:17
+// @LINE:18
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -301,13 +324,13 @@ def playMoveInGame(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.Handl
 )
                       
 
-// @LINE:13
+// @LINE:14
 def getGame(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.getGame(id), HandlerDef(this, "controllers.Application", "getGame", Seq(classOf[Long]), "GET", """""", _prefix + """games/$id<[^/]+>""")
 )
                       
 
-// @LINE:12
+// @LINE:13
 def getGameBoard(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.getGameBoard(id), HandlerDef(this, "controllers.Application", "getGameBoard", Seq(classOf[Long]), "GET", """""", _prefix + """games/$id<[^/]+>/get""")
 )
@@ -331,6 +354,12 @@ def newGame(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
+// @LINE:12
+def playMoveInGameAI(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.playMoveInGameAI(id), HandlerDef(this, "controllers.Application", "playMoveInGameAI", Seq(classOf[Long]), "GET", """""", _prefix + """games/$id<[^/]+>/playAI""")
+)
+                      
+
 // @LINE:8
 def newTask(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.newTask(), HandlerDef(this, "controllers.Application", "newTask", Seq(), "POST", """""", _prefix + """tasks""")
@@ -343,7 +372,7 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:17
+// @LINE:18
 def javascriptRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Seq(), "GET", """ Javascript routing""", _prefix + """assets/javascripts/routes""")
 )

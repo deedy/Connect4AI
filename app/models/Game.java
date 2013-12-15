@@ -16,8 +16,10 @@ import play.data.validation.Constraints.*;
 
 import javax.persistence.*;
 
+import models.ai.*;
+
 @Entity
-public class Game extends Model {
+public class Game extends Model implements Evaluatable {
 
   @Id
   public Long id;
@@ -59,6 +61,11 @@ public class Game extends Model {
   @Lob
   public String winStreak;
 
+  public Game(Game g) {
+    this.turn = g.turn;
+    this.board = g.board;
+    this.winStreak = g.winStreak;
+  }
 
   public Game() {
     ArrayList<ArrayList<Coins>> board = new ArrayList<ArrayList<Coins>>();
@@ -96,7 +103,82 @@ public class Game extends Model {
     System.out.println();
   }
 
-  public Map<String, Object> playMove(int column) {
+  public Game playMoveImmutable(Object m) {
+    Game newgame = new Game(this);
+    if (winStreak != null) {
+      return newgame;
+    }
+    Integer column = (Integer) m;
+    ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(newgame.board);
+    Integer row = null;
+    for (int i = 0; i < HEIGHT; i++) {
+      if (board.get(i).get(column) == null) {
+        board.get(i).set(column, newgame.turn);
+        newgame.turn = newgame.turn == Coins.PlayerA? Coins.PlayerB: Coins.PlayerA;
+        row = i;
+        break;
+      }
+    }
+    List<Map<String, Object>> win = isComplete(board,
+      row, column);
+    if (win != null) {
+      newgame.winStreak = SerializationUtils.encode((Serializable) win);
+    }
+    newgame.board = SerializationUtils.encode(board);
+    return newgame;
+  }
+
+  class GameEvaluator implements Evaluator {
+    private Coins initTurn;
+
+    GameEvaluator(Coins turn) {
+      this.initTurn = turn;
+    }
+
+    public Double evaluate(Evaluatable e) {
+      Game g = (Game) e;
+      ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(g.board);
+      if (g.winStreak != null) {
+        List<Map<String, Object>> win = (List<Map<String, Object>>) SerializationUtils.decode(g.winStreak);
+        Coins winningPlayer = Game.whoWon(board, win);
+        // System.out.println("A Win streak evaluation is being executed");
+        if (winningPlayer == this.initTurn) {
+          return 1.0d;
+        } else {
+          return -1.0d;
+        }
+      }
+      return this.heurestic(board);
+    }
+
+    public Double heurestic(ArrayList<ArrayList<Coins>> board) {
+      return 0.0d;
+    }
+  }
+
+  public List<Object> possibleMoves() {
+    ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(this.board);
+    List<Object> availableMoves = new ArrayList<Object>();
+    if (winStreak != null) {
+      return availableMoves;
+    }
+    for (int i = 0; i < WIDTH; i++) {
+      if (board.get(HEIGHT - 1).get(i) == null) {
+        availableMoves.add(i);
+      }
+    }
+    return availableMoves;
+  }
+
+  public Map<String, Object> playMoveAI() {
+    int LOOKAHEAD = 8;
+    System.out.println(this.turn);
+    AlphaBetaMinimax t = new AlphaBetaMinimax(new GameEvaluator(this.turn), this, LOOKAHEAD, -2, 2, true);
+    System.out.println("Move Computer would play "+t.getMove());
+    return this.playMove((Integer) t.getMove());
+  }
+
+  public Map<String, Object> playMove(Integer column) {
     ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(this.board);
     Map<String, Object> resultJson = new HashMap<String, Object>();
     if (winStreak != null) {
@@ -185,7 +267,6 @@ public class Game extends Model {
     if (toCheck == null) {
       return null;
     }
-    System.out.println("Checking Completeness");
     for (int i = -1; i <= 1 ; i++) {
       for (int j = -1; j <= 1; j++) {
         if (!(i == 0 && j == 0)) {
@@ -259,6 +340,7 @@ public class Game extends Model {
   }
 
   public String toString() {
+    Game.prettyPrintBoard((ArrayList<ArrayList<Coins>>)SerializationUtils.decode(board));
     return "Game"+this.id;
   }
 

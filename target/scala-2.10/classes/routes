@@ -9,6 +9,7 @@ POST    /tasks                  controllers.Application.newTask()
 POST    /tasks/:id/delete       controllers.Application.deleteTask(id: Long)
 POST    /tasks/newgame           controllers.Application.newGame()
 GET    /games/:id/play           controllers.Application.playMoveInGame(id : Long)
+GET /games/:id/playAI           controllers.Application.playMoveInGameAI(id : Long)
 GET    /games/:id/get           controllers.Application.getGameBoard(id : Long)
 GET     /games/:id                controllers.Application.getGame(id: Long)
 

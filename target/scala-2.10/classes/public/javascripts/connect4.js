@@ -113,6 +113,31 @@ Connect4.prototype.drawWin = function(points) {
   }
 }
 
+Connect4.prototype.initiateArtificialIntelligence = function() {
+  var ai_r = jsRoutes.controllers.Application.playMoveInGameAI(this.id)
+  $.ajax({
+    url: ai_r.url,
+    context: this,
+    type: ai_r.type,
+    dataType: "json",
+    timeout: 30000,
+    success: function(move){
+      console.log("success AI");
+      console.log(move);
+      this.playMove(move);
+    },
+    error: function() {
+      console.log("error AI");
+    },
+    complete: function(xhr, retcode) {
+      if (retcode == "timeout") {
+        console.log("request timeout, trying again.");
+        this.initiateArtificialIntelligence();
+      }
+    }
+  });
+}
+
 Connect4.prototype.clickCallback = function(column) {
   var r = jsRoutes.controllers.Application.playMoveInGame(this.id);
   $.ajax({
@@ -127,6 +152,7 @@ Connect4.prototype.clickCallback = function(column) {
       console.log("success");
       console.log(move);
       this.playMove(move);
+      this.initiateArtificialIntelligence();
     },
     error: function() {
       console.log("error");
