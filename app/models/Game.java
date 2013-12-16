@@ -24,6 +24,7 @@ public class Game extends Model implements Evaluatable {
   @Id
   public Long id;
 
+  public static final int LOOKAHEAD = 6;
   public static final int WIDTH = 7;
   public static final int HEIGHT = 6;
   public static enum MessageID {
@@ -96,7 +97,7 @@ public class Game extends Model implements Evaluatable {
         } else if (c == Coins.PlayerB) {
           System.out.print("B");
         }
-        System.out.print("\t");
+        System.out.print(" ");
       }
       System.out.println();
     }
@@ -152,7 +153,18 @@ public class Game extends Model implements Evaluatable {
     }
 
     public Double heurestic(ArrayList<ArrayList<Coins>> board) {
-      return 0.0d;
+      double init = 0.0d;
+      for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+          double value_add = ((-1*((double)Math.abs(j - WIDTH/2)) - (WIDTH/2)))/(WIDTH * HEIGHT * WIDTH);
+          if (board.get(i).get(j) == this.initTurn) {
+            init += value_add;
+          } else {
+            init -= value_add;
+          }
+        }
+      }
+      return init;
     }
   }
 
@@ -171,8 +183,8 @@ public class Game extends Model implements Evaluatable {
   }
 
   public Map<String, Object> playMoveAI() {
-    int LOOKAHEAD = 8;
     System.out.println(this.turn);
+    System.out.printf("Lookahead: %d\n", LOOKAHEAD);
     AlphaBetaMinimax t = new AlphaBetaMinimax(new GameEvaluator(this.turn), this, LOOKAHEAD, -2, 2, true);
     System.out.println("Move Computer would play "+t.getMove());
     return this.playMove((Integer) t.getMove());
