@@ -1,4 +1,4 @@
-[0m[[0mdebug[0m] [0mInvalidating /Users/deedy/Dev/Play/Connect4AI/target/scala-2.10/classes/models/Game$PassableGame.class: stamp changed from lastModified(1387236540000) to lastModified(1387236557000)[0m
+[0m[[0mdebug[0m] [0mInvalidating /Users/deedy/Dev/Play/Connect4AI/target/scala-2.10/classes/models/Game$PassableGame.class: stamp changed from lastModified(1387236558000) to lastModified(1387236716000)[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mInitial source changes: [0m
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
@@ -19,8 +19,8 @@
 [0m[[33mwarn[0m] [0mNote: /Users/deedy/Dev/Play/Connect4AI/app/models/Game.java uses unchecked or unsafe operations.[0m
 [0m[[33mwarn[0m] [0mNote: Recompile with -Xlint:unchecked for details.[0m
 [0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
-[0m[[0mdebug[0m] [0mJava compilation took 0.065982 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.078979 s[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.104018 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.128318 s[0m
 [0m[[0mdebug[0m] [0mInvalidated by transitive public inheritance: Set()[0m
 [0m[[0mdebug[0m] [0mInvalidated by direct dependency: Set()[0m
 [0m[[0mdebug[0m] [0mNew invalidations:[0m
