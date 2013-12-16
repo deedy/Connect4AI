@@ -24,7 +24,7 @@ public class Game extends Model {
   @Id
   public Long id;
 
-  public static final int LOOKAHEAD = 8;
+  public static final int LOOKAHEAD = 11;
   public static final int WIDTH = 7;
   public static final int HEIGHT = 6;
   public static enum MessageID {
@@ -183,9 +183,18 @@ public class Game extends Model {
 
   class GameEvaluator implements Evaluator<PassableGame, Integer> {
     private Coins initTurn;
-
+    private int[] rowOrder = {3,4,2,1,5,0,6};
+    private Map<Integer, Double> valueMap;
     GameEvaluator(Coins turn) {
       this.initTurn = turn;
+      this.valueMap = new HashMap<Integer, Double>();
+      this.valueMap.put(0, 0.05);
+      this.valueMap.put(6, 0.05);
+      this.valueMap.put(1, 0.10);
+      this.valueMap.put(5, 0.10);
+      this.valueMap.put(2, 0.15);
+      this.valueMap.put(4, 0.15);
+      this.valueMap.put(3, 0.20);
     }
 
     public Double evaluate(PassableGame pg) {
@@ -206,24 +215,30 @@ public class Game extends Model {
       double init = 0.0d;
       for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
-          double value_add = ((-1*((double)Math.abs(j - WIDTH/2)) - (WIDTH/2)))/(WIDTH * HEIGHT * WIDTH);
-          if (board.get(i).get(j) == this.initTurn) {
-            init += value_add;
-          } else {
-            init -= value_add;
+          // double value_add = ((-1*((double)Math.abs(j - WIDTH/2)) - (WIDTH/2)))/(WIDTH * HEIGHT * WIDTH);
+
+          if (board.get(i).get(j) != null) {
+            double value_add = this.valueMap.get(j);
+            value_add += (HEIGHT - j)*0.05/7;
+
+            value_add/=(WIDTH*HEIGHT*WIDTH);
+            if (board.get(i).get(j) == this.initTurn) {
+              init += value_add;
+            } else {
+              init -= value_add;
+            }
           }
         }
       }
       return init;
     }
-
     public List<Integer> possibleMoves(PassableGame pg) {
       ArrayList<ArrayList<Coins>> board = pg.board;
       List<Integer> availableMoves = new ArrayList<Integer>();
       if (winStreak != null) {
         return availableMoves;
       }
-      for (int i = 0; i < WIDTH; i++) {
+      for (Integer i : rowOrder) {
         if (board.get(HEIGHT - 1).get(i) == null) {
           availableMoves.add(i);
         }

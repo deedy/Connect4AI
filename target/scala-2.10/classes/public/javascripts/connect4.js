@@ -1,5 +1,9 @@
 
-function Connect4(id, s, wb, hb, bw) {
+function Connect4(id, s, wb, hb, bw, pli) {
+  /**
+   * Whether or not this should be an AI vs AI testing game.
+   */
+  this.playItself = pli;
   /**
    * The Game Id as stored on the server
    */
@@ -51,6 +55,9 @@ function Connect4(id, s, wb, hb, bw) {
    */
   this.makeSelector = function(x, y) {
       return "coin-"+x+"-"+y;
+  }
+  if (this.playItself) {
+    this.initiateArtificialIntelligence();
   }
 }
 Connect4.prototype.getCoinAt = function(row, column) {
@@ -125,6 +132,9 @@ Connect4.prototype.initiateArtificialIntelligence = function() {
       console.log("success AI");
       console.log(move);
       this.playMove(move);
+      if (this.playItself) {
+        this.initiateArtificialIntelligence();
+      }
     },
     error: function() {
       console.log("error AI");
@@ -212,5 +222,5 @@ Connect4.prototype.retrieveBoard = function() {
 $(document).ready(function() {
   var gameId = $('#gameId').data('id');
   var s = Snap($(document).width(), $(document).height());
-  var instance = new Connect4(gameId, s, 7, 6, 60);
+  var instance = new Connect4(gameId, s, 7, 6, 60, true);
 });

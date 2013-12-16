@@ -43,7 +43,7 @@ public class AlphaBetaMinimax {
                     if (DEBUG) {
                         System.out.println("Child val: "+child.value+" minormax"+minOrMax+" move:"+m+" bestmove: "+bestMove);
                     }
-                    if (beta < minOrMax || minOrMax == 1.0d) {
+                    if (beta <= minOrMax || minOrMax == 1.0d) {
                         break;
                     }
                 }
@@ -69,7 +69,7 @@ public class AlphaBetaMinimax {
                             System.out.println("New minnode best move is now: "+bestMove);
                         }
                     }
-                    if (minOrMax < alpha || minOrMax == -1.0d) {
+                    if (minOrMax <= alpha || minOrMax == -1.0d) {
                         break;
                     }
                 }
