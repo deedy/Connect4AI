@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.Serializable;
-
+import java.lang.StringBuilder;
 import utils.SerializationUtils;
 
 import play.db.ebean.*;
@@ -19,12 +19,12 @@ import javax.persistence.*;
 import models.ai.*;
 
 @Entity
-public class Game extends Model implements Evaluatable {
+public class Game extends Model {
 
   @Id
   public Long id;
 
-  public static final int LOOKAHEAD = 6;
+  public static final int LOOKAHEAD = 8;
   public static final int WIDTH = 7;
   public static final int HEIGHT = 6;
   public static enum MessageID {
@@ -104,52 +104,102 @@ public class Game extends Model implements Evaluatable {
     System.out.println();
   }
 
-  public Game playMoveImmutable(Object m) {
-    Game newgame = new Game(this);
-    if (winStreak != null) {
-      return newgame;
-    }
-    Integer column = (Integer) m;
-    ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(newgame.board);
-    Integer row = null;
-    for (int i = 0; i < HEIGHT; i++) {
-      if (board.get(i).get(column) == null) {
-        board.get(i).set(column, newgame.turn);
-        newgame.turn = newgame.turn == Coins.PlayerA? Coins.PlayerB: Coins.PlayerA;
-        row = i;
-        break;
+  public static String prettyStringBoard(ArrayList<ArrayList<Coins>> board) {
+    StringBuilder sb = new StringBuilder("");
+    for (int i = board.size()-1; i >= 0; i--) {
+      ArrayList<Coins> row = board.get(i);
+      for (Coins c : row) {
+        if (c == null) {
+          sb.append("_");
+        } else if (c == Coins.PlayerA) {
+          sb.append("A");
+        } else if (c == Coins.PlayerB) {
+          sb.append("B");
+        }
+        sb.append(" ");
       }
+      sb.append("\n");
     }
-    List<Map<String, Object>> win = isComplete(board,
-      row, column);
-    if (win != null) {
-      newgame.winStreak = SerializationUtils.encode((Serializable) win);
-    }
-    newgame.board = SerializationUtils.encode(board);
-    return newgame;
+    sb.append("\n");
+    return sb.toString();
   }
 
-  class GameEvaluator implements Evaluator {
+  class PassableGame implements Evaluatable<Integer>  {
+    public ArrayList<ArrayList<Coins>> board;
+    public Coins turn;
+    public Coins winningPlayer;
+    PassableGame(Game g) {
+      this.board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(g.board);
+      this.turn = g.turn;
+      if (g.winStreak != null) {
+        List<Map<String, Object>> win = (List<Map<String, Object>>) SerializationUtils.decode(g.winStreak);
+        winningPlayer = Game.whoWon(this.board, win);
+      } else {
+        this.winningPlayer = null;
+      }
+    }
+    public String toString() {
+      return Game.prettyStringBoard(this.board);
+    }
+    PassableGame (PassableGame g) {
+      this.board = new ArrayList<ArrayList<Coins>>();
+      for (ArrayList<Coins> ac : g.board) {
+        ArrayList<Coins> tmp = new ArrayList<Coins> ();
+        for (Coins c: ac) {
+          tmp.add(c);
+        }
+        board.add(tmp);
+      }
+      this.turn = g.turn;
+      this.winningPlayer = g.winningPlayer;
+    }
+    public PassableGame playMoveImmutable(Integer move) {
+      PassableGame pg = new PassableGame(this);
+      if (winningPlayer != null) {
+        return pg;
+      }
+      Integer column = move;
+      Integer row = null;
+      for (int i = 0; i < HEIGHT; i++) {
+        if (pg.board.get(i).get(column) == null) {
+          pg.board.get(i).set(column, pg.turn);
+          pg.turn = pg.turn == Coins.PlayerA? Coins.PlayerB: Coins.PlayerA;
+          row = i;
+          break;
+        }
+      }
+      // System.out.println(pg.board+"\t"+row+"\t"+column);
+      List<Map<String, Object>> win = isComplete(pg.board, row, column);
+      // System.out.println("DID MOVE WIN: "+win);
+      if (win != null) {
+        // System.out.println(pg.board);
+        // Game.prettyPrintBoard(pg.board);
+        pg.winningPlayer = Game.whoWon(pg.board, win);
+        // System.out.println(pg.winningPlayer+ "won\n\n");
+      }
+      return pg;
+    }
+  }
+
+  class GameEvaluator implements Evaluator<PassableGame, Integer> {
     private Coins initTurn;
 
     GameEvaluator(Coins turn) {
       this.initTurn = turn;
     }
 
-    public Double evaluate(Evaluatable e) {
-      Game g = (Game) e;
-      ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(g.board);
-      if (g.winStreak != null) {
-        List<Map<String, Object>> win = (List<Map<String, Object>>) SerializationUtils.decode(g.winStreak);
-        Coins winningPlayer = Game.whoWon(board, win);
-        // System.out.println("A Win streak evaluation is being executed");
-        if (winningPlayer == this.initTurn) {
+    public Double evaluate(PassableGame pg) {
+      if (pg.winningPlayer != null) {
+        // System.out.println("WON: "+pg.winningPlayer+" INIT: "+this.initTurn);
+        // Game.prettyPrintBoard(pg.board);
+
+        if (pg.winningPlayer == this.initTurn) {
           return 1.0d;
         } else {
           return -1.0d;
         }
       }
-      return this.heurestic(board);
+      return this.heurestic(pg.board);
     }
 
     public Double heurestic(ArrayList<ArrayList<Coins>> board) {
@@ -166,26 +216,30 @@ public class Game extends Model implements Evaluatable {
       }
       return init;
     }
-  }
 
-  public List<Object> possibleMoves() {
-    ArrayList<ArrayList<Coins>> board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(this.board);
-    List<Object> availableMoves = new ArrayList<Object>();
-    if (winStreak != null) {
+    public List<Integer> possibleMoves(PassableGame pg) {
+      ArrayList<ArrayList<Coins>> board = pg.board;
+      List<Integer> availableMoves = new ArrayList<Integer>();
+      if (winStreak != null) {
+        return availableMoves;
+      }
+      for (int i = 0; i < WIDTH; i++) {
+        if (board.get(HEIGHT - 1).get(i) == null) {
+          availableMoves.add(i);
+        }
+      }
       return availableMoves;
     }
-    for (int i = 0; i < WIDTH; i++) {
-      if (board.get(HEIGHT - 1).get(i) == null) {
-        availableMoves.add(i);
-      }
-    }
-    return availableMoves;
   }
 
   public Map<String, Object> playMoveAI() {
     System.out.println(this.turn);
     System.out.printf("Lookahead: %d\n", LOOKAHEAD);
-    AlphaBetaMinimax t = new AlphaBetaMinimax(new GameEvaluator(this.turn), this, LOOKAHEAD, -2, 2, true);
+    Game.prettyPrintBoard((ArrayList<ArrayList<Coins>>)
+      SerializationUtils.decode(board));
+    AlphaBetaMinimax t = new AlphaBetaMinimax(
+      new GameEvaluator(this.turn),
+      new PassableGame(this), LOOKAHEAD, -2, 2, true);
     System.out.println("Move Computer would play "+t.getMove());
     return this.playMove((Integer) t.getMove());
   }

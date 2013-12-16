@@ -1,31 +1,22 @@
-2013-12-15 18:49:08,940 - [INFO] - from play in pool-5-thread-4 
+2013-12-16 00:29:28,717 - [INFO] - from play in pool-5-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0%0:9000
 
-2013-12-15 18:49:16,479 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-16 00:29:34,215 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2013-12-15 18:49:16,758 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-16 00:29:34,424 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2013-12-15 18:49:17,807 - [INFO] - from play in play-internal-execution-context-1 
+2013-12-16 00:29:35,420 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-12-15 21:04:40,673 - [INFO] - from play in play-internal-execution-context-7 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2013-12-15 21:04:40,687 - [INFO] - from play in play-internal-execution-context-7 
-database [default] connected at jdbc:h2:mem:play
-
-2013-12-15 21:04:40,946 - [INFO] - from play in play-internal-execution-context-7 
-Application started (Dev)
-
-2013-12-15 21:04:40,990 - [ERROR] - from play in play-internal-execution-context-7 
+2013-12-16 01:19:48,947 - [ERROR] - from play in play-internal-execution-context-10 
 Cannot invoke the action, eventually got an error: java.lang.NullPointerException
 
-2013-12-15 21:04:41,219 - [ERROR] - from application in play-internal-execution-context-7 
+2013-12-16 01:19:49,009 - [ERROR] - from application in play-internal-execution-context-10 
 
 
-! @6giaj8emk - Internal server error, for (GET) [/games/14/play?column=3] ->
+! @6gic0ldda - Internal server error, for (GET) [/games/18/playAI] ->
 
 play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.0]
@@ -53,10 +44,12 @@ play.api.Application$$anon$1: Execution exception[[NullPointerException: null]]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
 Caused by: java.lang.NullPointerException: null
-	at controllers.Application.playMoveInGameWithOrWithoutAI(Application.java:81) ~[classes/:na]
-	at controllers.Application.playMoveInGame(Application.java:99) ~[classes/:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.apply(routes_routing.scala:125) ~[classes/:na]
-	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.apply(routes_routing.scala:125) ~[classes/:na]
+	at models.Game.playMove(Game.java:264) ~[na:na]
+	at models.Game.playMoveAI(Game.java:244) ~[na:na]
+	at controllers.Application.playMoveInGameWithOrWithoutAI(Application.java:87) ~[na:na]
+	at controllers.Application.playMoveInGameAI(Application.java:103) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.apply(routes_routing.scala:133) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.apply(routes_routing.scala:133) ~[na:na]
 	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.0]
 	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.0]
 	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.0]

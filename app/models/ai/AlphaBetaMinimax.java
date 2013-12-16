@@ -13,7 +13,7 @@ public class AlphaBetaMinimax {
     static boolean DEBUG = false;
 
     public AlphaBetaMinimax(Evaluator eval, Evaluatable e, int depth, double alpha, double beta, boolean isMax) {
-        if (depth == 0 || e.possibleMoves().size() == 0) {
+        if (depth == 0 || eval.possibleMoves(e).size() == 0) {
             this.value = eval.evaluate(e);
             if (DEBUG) {
                 System.out.println("Value: "+this.value);
@@ -24,7 +24,7 @@ public class AlphaBetaMinimax {
             if (isMax) {
                 double minOrMax = alpha;
                 Object bestMove = null;
-                for (Object m : e.possibleMoves()) {
+                for (Object m : eval.possibleMoves(e)) {
                     if (DEBUG) {
                         System.out.println("Calling child from maxnode with move " +m+"...");
                     }
@@ -43,7 +43,7 @@ public class AlphaBetaMinimax {
                     if (DEBUG) {
                         System.out.println("Child val: "+child.value+" minormax"+minOrMax+" move:"+m+" bestmove: "+bestMove);
                     }
-                    if (beta < minOrMax) {
+                    if (beta < minOrMax || minOrMax == 1.0d) {
                         break;
                     }
                 }
@@ -54,7 +54,7 @@ public class AlphaBetaMinimax {
             } else {
                 double minOrMax = beta;
                 Object bestMove = null;
-                for (Object m : e.possibleMoves()) {
+                for (Object m : eval.possibleMoves(e)) {
                     if (DEBUG) {
                         System.out.println("Calling child from minnode with move " +m+"...");
                     }
@@ -69,7 +69,7 @@ public class AlphaBetaMinimax {
                             System.out.println("New minnode best move is now: "+bestMove);
                         }
                     }
-                    if (minOrMax < alpha) {
+                    if (minOrMax < alpha || minOrMax == -1.0d) {
                         break;
                     }
                 }
