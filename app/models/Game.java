@@ -128,6 +128,7 @@ public class Game extends Model {
     public ArrayList<ArrayList<Coins>> board;
     public Coins turn;
     public Coins winningPlayer;
+    public Integer lastMove;
     PassableGame(Game g) {
       this.board = (ArrayList<ArrayList<Coins>>) SerializationUtils.decode(g.board);
       this.turn = g.turn;
@@ -137,6 +138,7 @@ public class Game extends Model {
       } else {
         this.winningPlayer = null;
       }
+      this.lastMove = null;
     }
     public String toString() {
       return Game.prettyStringBoard(this.board);
@@ -152,6 +154,7 @@ public class Game extends Model {
       }
       this.turn = g.turn;
       this.winningPlayer = g.winningPlayer;
+      this.lastMove = g.lastMove;
     }
     public PassableGame playMoveImmutable(Integer move) {
       PassableGame pg = new PassableGame(this);
@@ -163,6 +166,7 @@ public class Game extends Model {
       for (int i = 0; i < HEIGHT; i++) {
         if (pg.board.get(i).get(column) == null) {
           pg.board.get(i).set(column, pg.turn);
+          pg.lastMove = column;
           pg.turn = pg.turn == Coins.PlayerA? Coins.PlayerB: Coins.PlayerA;
           row = i;
           break;
@@ -183,8 +187,9 @@ public class Game extends Model {
 
   class GameEvaluator implements Evaluator<PassableGame, Integer> {
     private Coins initTurn;
-    private int[] rowOrder = {3,4,2,1,5,0,6};
+    private Integer[] rowOrder = {3,4,2,1,5,0,6};
     private Map<Integer, Double> valueMap;
+    private Map<Integer, Integer[]> orderOfMovesMap;
     GameEvaluator(Coins turn) {
       this.initTurn = turn;
       this.valueMap = new HashMap<Integer, Double>();
@@ -192,9 +197,13 @@ public class Game extends Model {
       this.valueMap.put(6, 0.05);
       this.valueMap.put(1, 0.10);
       this.valueMap.put(5, 0.10);
-      this.valueMap.put(2, 0.15);
-      this.valueMap.put(4, 0.15);
-      this.valueMap.put(3, 0.20);
+      this.valueMap.put(2, 0.12);
+      this.valueMap.put(4, 0.12);
+      this.valueMap.put(3, 0.15);
+      orderOfMovesMap = new HashMap<Integer, Integer[]>();
+      for (int i = 0; i < 7; i++) {
+        orderOfMovesMap.put(i, constructOrder(i));
+      }
     }
 
     public Double evaluate(PassableGame pg) {
@@ -219,7 +228,7 @@ public class Game extends Model {
 
           if (board.get(i).get(j) != null) {
             double value_add = this.valueMap.get(j);
-            value_add += (HEIGHT - j)*0.05/7;
+            // value_add += (HEIGHT - j)*0.05/7;
 
             value_add/=(WIDTH*HEIGHT*WIDTH);
             if (board.get(i).get(j) == this.initTurn) {
@@ -232,18 +241,42 @@ public class Game extends Model {
       }
       return init;
     }
+
     public List<Integer> possibleMoves(PassableGame pg) {
       ArrayList<ArrayList<Coins>> board = pg.board;
       List<Integer> availableMoves = new ArrayList<Integer>();
       if (winStreak != null) {
         return availableMoves;
       }
-      for (Integer i : rowOrder) {
+      Integer[] orderOfMoves;
+      if (pg.lastMove == null) {
+        orderOfMoves = rowOrder;
+      } else {
+        orderOfMoves = orderOfMovesMap.get(pg.lastMove);
+      }
+      for (Integer i : orderOfMoves) {
         if (board.get(HEIGHT - 1).get(i) == null) {
           availableMoves.add(i);
         }
       }
       return availableMoves;
+    }
+
+    private Integer[] constructOrder(int n) {
+      Integer[] order = new Integer[7];
+      int c = 0;
+      order[c++] = n;
+      int d = 1;
+      while (c < 7) {
+        if (n + d < 7 && n + d >= 0) {
+          order[c++] = n + d;
+        }
+        if (n - d < 7 && n - d >= 0) {
+          order[c++] = n - d;
+        }
+        d++;
+      }
+      return order;
     }
   }
 

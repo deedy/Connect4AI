@@ -222,5 +222,5 @@ Connect4.prototype.retrieveBoard = function() {
 $(document).ready(function() {
   var gameId = $('#gameId').data('id');
   var s = Snap($(document).width(), $(document).height());
-  var instance = new Connect4(gameId, s, 7, 6, 60, false);
+  var instance = new Connect4(gameId, s, 7, 6, 60, true);
 });
